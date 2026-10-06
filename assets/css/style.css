@@ -323,6 +323,7 @@ main { display: block; flex: 1 0 auto; }
     color: var(--accent); background: #eaf1fa; padding: .1rem .5rem; border-radius: 4px;
 }
 .news-tag.event, .news-tag.career { color: #146c43; background: #e3f3ea; }
+.news-tag.award { color: #8a5a00; background: #fff2d1; }
 @media (max-width: 720px) {
     .news-item { grid-template-columns: 1fr; gap: .75rem; }
 }
