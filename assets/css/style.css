@@ -282,3 +282,13 @@ main { display: block; flex: 1 0 auto; }
 .partner strong { font-size: 1.05rem; color: var(--navy); }
 .partner span { color: var(--muted); font-size: .92rem; }
 @media (max-width: 720px) { .partners { grid-template-columns: 1fr; } }
+
+/* ---------- Icon-only link buttons ---------- */
+.icon-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 42px; height: 42px; border-radius: 8px;
+    border: 1px solid var(--line); color: var(--muted); background: var(--bg);
+    transition: color .2s, border-color .2s, background .2s;
+}
+.icon-btn svg { width: 22px; height: 22px; display: block; }
+.icon-btn:hover { color: var(--accent); border-color: var(--accent); background: var(--bg-soft); }
