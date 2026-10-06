@@ -303,21 +303,32 @@ main { display: block; flex: 1 0 auto; }
     margin-top: .75rem; font-size: .9rem; color: var(--muted); line-height: 1.5;
 }
 
-/* ---------- News timeline ---------- */
+/* ---------- News (image left, text right) ---------- */
 .news-list { list-style: none; margin: 0; padding: 0; }
 .news-item {
-    display: grid; grid-template-columns: 130px 1fr; gap: 1.25rem;
-    padding: 1.25rem 0; border-bottom: 1px solid var(--line);
+    display: grid; grid-template-columns: 240px 1fr; gap: 1.5rem; align-items: start;
+    padding: 1.5rem 0; border-bottom: 1px solid var(--line);
 }
 .news-item:last-child { border-bottom: 0; }
-.news-date { color: var(--muted); font-weight: 600; font-size: .92rem; padding-top: .15rem; }
-.news-body h3 { margin: .35rem 0 .35rem; font-size: 1.1rem; color: var(--navy); }
+.news-item:first-child { padding-top: 0; }
+.news-media {
+    aspect-ratio: 4 / 3; overflow: hidden;
+    border: 1px solid var(--line); border-radius: 8px; background: var(--line);
+    display: grid; grid-template-columns: 1fr; gap: 2px;
+}
+.news-media.imgs-2 { grid-template-columns: 1fr 1fr; }
+.news-media.imgs-4 { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+.news-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.news-body h3 { margin: .35rem 0 .4rem; font-size: 1.15rem; color: var(--navy); }
 .news-body p { margin: 0; }
+.news-meta { display: flex; align-items: center; gap: .6rem; color: var(--muted); font-weight: 600; font-size: .9rem; }
 .news-tag {
     display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
     color: var(--accent); background: #eaf1fa; padding: .1rem .5rem; border-radius: 4px;
 }
+.news-tag.event, .news-tag.career { color: #146c43; background: #e3f3ea; }
+.news-tag.award { color: #8a5a00; background: #fff2d1; }
+.news-tag.outreach { color: #6b3fa0; background: #efe7fb; }
 @media (max-width: 720px) {
-    .news-item { grid-template-columns: 1fr; gap: .4rem; }
-    .news-date { padding-top: 0; }
+    .news-item { grid-template-columns: 1fr; gap: .75rem; }
 }
