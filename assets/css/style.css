@@ -321,3 +321,9 @@ main { display: block; flex: 1 0 auto; }
     .news-item { grid-template-columns: 1fr; gap: .4rem; }
     .news-date { padding-top: 0; }
 }
+
+/* News entry photo */
+.news-img {
+    margin-top: .9rem; max-width: 460px; width: 100%; height: auto;
+    border: 1px solid var(--line); border-radius: 8px; display: block;
+}
