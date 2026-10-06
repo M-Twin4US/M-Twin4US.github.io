@@ -292,3 +292,13 @@ main { display: block; flex: 1 0 auto; }
 }
 .icon-btn svg { width: 22px; height: 22px; display: block; }
 .icon-btn:hover { color: var(--accent); border-color: var(--accent); background: var(--bg-soft); }
+
+/* ---------- Project framework figure ---------- */
+.project-figure { margin: 2rem 0 0; }
+.project-figure img {
+    width: 100%; height: auto; display: block;
+    border: 1px solid var(--line); border-radius: var(--radius); background: #fff;
+}
+.project-figure figcaption {
+    margin-top: .75rem; font-size: .9rem; color: var(--muted); line-height: 1.5;
+}
