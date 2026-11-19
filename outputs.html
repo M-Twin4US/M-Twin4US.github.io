@@ -4,15 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Outputs | M-Twin4US</title>
-    <meta name="description" content="Software, data and supplementary material accompanying M-Twin4US publications.">
+    <meta name="description" content="Software, demos, stories and other material from the M-Twin4US project.">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="M-Twin4US">
     <meta property="og:title" content="Outputs | M-Twin4US">
-    <meta property="og:description" content="Software, data and supplementary material accompanying M-Twin4US publications.">
+    <meta property="og:description" content="Software, demos, stories and other material from the M-Twin4US project.">
     <meta property="og:url" content="https://m-twin4us.org/outputs.html">
     <link rel="canonical" href="https://m-twin4us.org/outputs.html">
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <style>
+        .out-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+        .out-card{display:flex;flex-direction:column;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:var(--radius);padding:1.4rem 1.5rem}
+        .out-card.soon{border-left-color:var(--line);background:var(--bg-soft)}
+        .out-type{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:#eaf1fa;padding:.1rem .5rem;border-radius:4px;align-self:flex-start}
+        .out-type.soon{color:var(--muted);background:#eceff3}
+        .out-card h3{margin:.6rem 0 .4rem;font-size:1.2rem;color:var(--navy)}
+        .out-card p{margin:0 0 1rem;color:var(--muted);font-size:.97rem}
+        .out-card .btn-row{margin-top:auto}
+        .out-note{color:var(--muted);font-size:.85rem;margin-top:1.25rem}
+        @media(max-width:720px){.out-grid{grid-template-columns:1fr}}
+    </style>
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -28,7 +40,6 @@
             <nav class="site-nav" id="site-nav" aria-label="Main">
                 <ul>
                     <li><a href="/">About</a></li>
-                    <li><a href="/story.html">Story</a></li>
                     <li><a href="/team.html">Team</a></li>
                     <li><a href="/publications.html">Publications</a></li>
                     <li><a href="/news.html">News</a></li>
@@ -42,32 +53,47 @@
         <section class="hero page-hero">
             <div class="container">
                 <h1>Outputs</h1>
-                <p class="lead">Software, data and supplementary material accompanying M-Twin4US publications.</p>
+                <p class="lead">Software, demos, stories and other material from the project &mdash; each opens in its own window.</p>
             </div>
         </section>
 
-        <section class="section" id="dashboard">
+        <section class="section">
             <div class="container">
-                <h2>GPR4Net Interactive Dashboard</h2>
-                <p class="pub-venue" style="margin-bottom:1rem">Supplementary output &middot; Accompanies a journal manuscript currently under revision</p>
-                <p>GPR4Net is a lightweight neural-network surrogate that predicts GPR B-scans in about 7&nbsp;ms per sample, compared with roughly 102&nbsp;s for an FDTD simulation. The dashboard demonstrates three predictive digital-twin scenarios: tunnel-lining inspection at 800&nbsp;MHz and 600&nbsp;MHz, and buried-pipeline detection at 1&nbsp;GHz. Adjust subsurface parameters in the sidebar and the surrogate predicts the corresponding B-scan.</p>
+                <div class="out-grid">
 
-<div class="btn-row" style="margin-bottom:1rem">
-                    <a class="btn" href="https://gpr4net-dashboard-hcnznvhbost56jzp3pn7be.streamlit.app/" target="_blank" rel="noopener">Open full screen &#8599;</a>
-                    <a class="btn secondary" href="https://github.com/M-Twin4US/gpr4net-dashboard" target="_blank" rel="noopener">Source code on GitHub &#8599;</a>
-                </div>
-                <p class="embed-note mobile-only">On a phone, the dashboard works best in full screen &mdash; tap <strong>Open full screen</strong> above.</p>
+                    <article class="out-card">
+                        <span class="out-type">Story</span>
+                        <h3>Grandpa&rsquo;s House</h3>
+                        <p>An illustrated story that explains what a digital twin is, through a family home by a flooding river.</p>
+                        <div class="btn-row">
+                            <a class="btn" href="/story.html">Read the story &rarr;</a>
+                        </div>
+                    </article>
 
-                <div class="embed">
-                    <iframe id="dashboard-frame" src="https://gpr4net-dashboard-hcnznvhbost56jzp3pn7be.streamlit.app/?embed=true" title="GPR4Net Dashboard" loading="lazy" allowfullscreen></iframe>
-                    <div class="embed-loader" id="dashboard-loader" role="status">
-                        <div class="spinner" aria-hidden="true"></div>
-                        <div>Loading the dashboard&hellip;</div>
-                        <div id="dashboard-slow" hidden>The free-tier server may be waking up, which can take up to a minute.<br>
-                            You can also <a href="https://gpr4net-dashboard-hcnznvhbost56jzp3pn7be.streamlit.app/" target="_blank" rel="noopener">open it in a new tab</a>.</div>
-                    </div>
+                    <article class="out-card" id="dashboard">
+                        <span class="out-type">Interactive demo</span>
+                        <h3>GPR4Net dashboard</h3>
+                        <p>A lightweight neural-network surrogate that predicts GPR B-scans in real time across three digital-twin scenarios. Opens in a new tab.</p>
+                        <div class="btn-row">
+                            <a class="btn" href="https://gpr4net-dashboard-hcnznvhbost56jzp3pn7be.streamlit.app/" target="_blank" rel="noopener">Open the dashboard &#8599;</a>
+                            <a class="btn secondary" href="https://github.com/M-Twin4US/gpr4net-dashboard" target="_blank" rel="noopener">Source on GitHub &#8599;</a>
+                        </div>
+                    </article>
+
+                    <article class="out-card soon">
+                        <span class="out-type soon">Interactive &middot; coming soon</span>
+                        <h3>Digital-twin experiment</h3>
+                        <p>A hands-on experiment that accompanies the story, letting you try a digital twin for yourself.</p>
+                    </article>
+
+                    <article class="out-card soon">
+                        <span class="out-type soon">Article &middot; coming soon</span>
+                        <h3>Reflections</h3>
+                        <p>A short, non-technical piece on digital twins and the maintenance of the things around us.</p>
+                    </article>
+
                 </div>
-                <p class="embed-note">If the app shows &ldquo;This app has gone to sleep&rdquo;, click the wake-up button inside it and wait about 30 seconds. Built with <a href="https://streamlit.io" target="_blank" rel="noopener">Streamlit</a>.</p>
+                <p class="out-note">The GPR4Net dashboard runs on a free server that sleeps when idle; if it shows &ldquo;this app has gone to sleep&rdquo;, click to wake it and wait about 30&nbsp;seconds.</p>
             </div>
         </section>
     </main>
@@ -87,7 +113,7 @@
     <footer class="site-footer">
         <div class="container">
             <span>&copy; 2026 M-Twin4US</span>
-            <span><a href="/">About</a> &middot; <a href="/story.html">Story</a> &middot; <a href="/team.html">Team</a> &middot; <a href="/publications.html">Publications</a> &middot; <a href="/news.html">News</a> &middot; <a href="/outputs.html">Outputs</a></span>
+            <span><a href="/">About</a> &middot; <a href="/team.html">Team</a> &middot; <a href="/publications.html">Publications</a> &middot; <a href="/news.html">News</a> &middot; <a href="/outputs.html">Outputs</a></span>
         </div>
     </footer>
     <script src="/assets/js/main.js"></script>
