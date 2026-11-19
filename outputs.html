@@ -14,16 +14,19 @@
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/assets/css/style.css">
     <style>
-        .out-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
-        .out-card{display:flex;flex-direction:column;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:var(--radius);padding:1.4rem 1.5rem}
-        .out-card.soon{border-left-color:var(--line);background:var(--bg-soft)}
-        .out-type{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:#eaf1fa;padding:.1rem .5rem;border-radius:4px;align-self:flex-start}
+        .out-rows{display:flex;flex-direction:column}
+        .out-row{display:grid;grid-template-columns:200px 1fr auto;gap:1.5rem;align-items:center;padding:1.6rem 0;border-top:1px solid var(--line)}
+        .out-row:first-child{border-top:none}
+        .out-thumb{width:200px;height:132px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--bg-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+        .out-thumb img{width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply}
+        .out-thumb.empty{color:var(--muted);font-size:.78rem;letter-spacing:.05em;text-transform:uppercase}
+        .out-type{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:#eaf1fa;padding:.1rem .5rem;border-radius:4px}
         .out-type.soon{color:var(--muted);background:#eceff3}
-        .out-card h3{margin:.6rem 0 .4rem;font-size:1.2rem;color:var(--navy)}
-        .out-card p{margin:0 0 1rem;color:var(--muted);font-size:.97rem}
-        .out-card .btn-row{margin-top:auto}
-        .out-note{color:var(--muted);font-size:.85rem;margin-top:1.25rem}
-        @media(max-width:720px){.out-grid{grid-template-columns:1fr}}
+        .out-row h3{margin:.45rem 0 .35rem;font-size:1.25rem;color:var(--navy)}
+        .out-row .out-body p{margin:0;color:var(--muted);max-width:56ch}
+        .out-row.soon{opacity:.85}
+        .out-go{white-space:nowrap}
+        @media(max-width:720px){.out-row{grid-template-columns:1fr;gap:.85rem}.out-thumb{width:100%;height:170px}}
     </style>
 </head>
 <body>
@@ -53,45 +56,54 @@
         <section class="hero page-hero">
             <div class="container">
                 <h1>Outputs</h1>
-                <p class="lead">Software, demos, stories and other material from the project &mdash; each opens in its own window.</p>
+                <p class="lead">Stories, demos and other material from the project &mdash; each opens in its own window.</p>
             </div>
         </section>
 
         <section class="section">
             <div class="container">
-                <div class="out-grid">
+                <div class="out-rows">
 
-                    <article class="out-card">
-                        <span class="out-type">Story</span>
-                        <h3>Grandpa&rsquo;s House</h3>
-                        <p>An illustrated story that explains what a digital twin is, through a family home by a flooding river.</p>
-                        <div class="btn-row">
-                            <a class="btn" href="/story.html">Read the story &rarr;</a>
+                    <article class="out-row">
+                        <div class="out-thumb"><img src="/assets/img/story/scene11.png" alt="A house and its digital twin in the rain"></div>
+                        <div class="out-body">
+                            <span class="out-type">Story</span>
+                            <h3>Grandpa&rsquo;s House</h3>
+                            <p>An illustrated story that explains what a digital twin is, through a family home by a flooding river.</p>
                         </div>
+                        <div class="out-go"><a class="btn" href="/story.html">Read the story &rarr;</a></div>
                     </article>
 
                     <!-- Hidden until the accompanying paper is published. To show again, remove the surrounding comment markers.
-<article class="out-card" id="dashboard">
-                        <span class="out-type">Interactive demo</span>
-                        <h3>GPR4Net dashboard</h3>
-                        <p>A lightweight neural-network surrogate that predicts GPR B-scans in real time across three digital-twin scenarios. Opens in a new tab.</p>
-                        <div class="btn-row">
-                            <a class="btn" href="https://gpr4net-dashboard-hcnznvhbost56jzp3pn7be.streamlit.app/" target="_blank" rel="noopener">Open the dashboard &#8599;</a>
-                            <a class="btn secondary" href="https://github.com/M-Twin4US/gpr4net-dashboard" target="_blank" rel="noopener">Source on GitHub &#8599;</a>
+                    <article class="out-row" id="dashboard">
+                        <div class="out-thumb"><img src="/assets/img/story/scene12.png" alt="GPR4Net dashboard preview"></div>
+                        <div class="out-body">
+                            <span class="out-type">Interactive demo</span>
+                            <h3>GPR4Net dashboard</h3>
+                            <p>A lightweight neural-network surrogate that predicts GPR B-scans in real time across three digital-twin scenarios. Opens in a new tab.</p>
                         </div>
+                        <div class="out-go"><a class="btn" href="https://gpr4net-dashboard-hcnznvhbost56jzp3pn7be.streamlit.app/" target="_blank" rel="noopener">Open the dashboard &#8599;</a></div>
                     </article>
--->
+                    -->
 
-                    <article class="out-card soon">
-                        <span class="out-type soon">Interactive &middot; coming soon</span>
-                        <h3>Digital-twin experiment</h3>
-                        <p>A hands-on experiment that accompanies the story, letting you try a digital twin for yourself.</p>
+                    <article class="out-row soon">
+                        <div class="out-thumb empty">Coming soon</div>
+                        <div class="out-body">
+                            <span class="out-type soon">Interactive &middot; coming soon</span>
+                            <h3>Digital-twin experiment</h3>
+                            <p>A hands-on experiment that accompanies the story, letting you try a digital twin for yourself.</p>
+                        </div>
+                        <div class="out-go"></div>
                     </article>
 
-                    <article class="out-card soon">
-                        <span class="out-type soon">Article &middot; coming soon</span>
-                        <h3>Reflections</h3>
-                        <p>A short, non-technical piece on digital twins and the maintenance of the things around us.</p>
+                    <article class="out-row soon">
+                        <div class="out-thumb empty">Coming soon</div>
+                        <div class="out-body">
+                            <span class="out-type soon">Article &middot; coming soon</span>
+                            <h3>Reflections</h3>
+                            <p>A short, non-technical piece on digital twins and the maintenance of the things around us.</p>
+                        </div>
+                        <div class="out-go"></div>
                     </article>
 
                 </div>
